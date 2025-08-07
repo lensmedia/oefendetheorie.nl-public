@@ -109,8 +109,8 @@ Content-Type: application/json
         },
         "createdAt": "2025-08-07T12:48:14+02:00"
     },
-    "login_page": "https://test.oefendetheorie.nl/be/inloggen",
-    "login": "https://test.oefendetheorie.nl/be/inloggen?code=43f86f76f9162065"
+    "login": "https://test.oefendetheorie.nl/be/inloggen?code=43f86f76f9162065",
+    "loginPage": "https://test.oefendetheorie.nl/be/inloggen"
 }
 ```
 
