@@ -23,7 +23,7 @@ Authorization: Basic F00B4R=
         "country": "BE",
         "locale": "nl_BE",
         "slug": "auto",
-        "href": "https://oefendetheorie.be/auto"
+        "href": "https://test.oefendetheorie.nl/be/auto",
         "publishedAt": "2025-08-07T15:52:54+02:00",
         "createdAt": "2025-08-07T15:52:54+02:00",
         "updatedAt": "2025-08-07T15:52:54+02:00",
@@ -72,3 +72,4 @@ Authorization: Basic F00B4R=
     ...
 ]
 ```
+
