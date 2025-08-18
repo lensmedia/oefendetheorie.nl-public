@@ -51,6 +51,6 @@ Parsing the string representation in php can be simplified using https://www.php
 **Note;** values in a duration are additive, e.g. `P1M31D` is the same as `P2M` (62 days), setting 93 days does not automatically convert it to 3 months in the notation, it remains `P93D`.
 
 ## Endpoints
-- [GET /course](course_get.md) - Get all courses
-- [POST /access_code](access_code_post.md) - Create an access code
-- [POST /access_code/{accessCode}/top-up](access_code_top_up_post.md) - Top up an access code
+- [GET /course](endpoints/course_get.md) - Get all courses
+- [POST /access_code](endpoints/access_code_post.md) - Create an access code
+- [POST /access_code/{accessCode}/top-up](endpoints/access_code_top_up_post.md) - Top up an access code

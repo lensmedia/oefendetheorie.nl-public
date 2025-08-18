@@ -6,14 +6,14 @@ Used to top up an access code.
 
 #### Request
 ##### Parameters
-| Name     | Type   | Description                                                                 |
-|----------|--------|-----------------------------------------------------------------------------|
-| `accessCode` | string | The access code to top up. |
+| Name         | Type   | Description                                                                    |
+|--------------|--------|--------------------------------------------------------------------------------|
+| `accessCode` | string | The access code to top up, the 16 character long hex string they use to login. |
 ##### Body
-| Property   | Type                    | Description                                                                                                                                                                                     |
-|------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `period`   | [`duration`](readme.md#duration) | (optional if duration is provided) A period is a stretch of time the user can freely access the platform starting when it uses the code for the first time.                                     |
-| `duration` | [`duration`](readme.md#duration) | (optional if period is provided) Duration is used to give the user an X amount of "seconds" of access, and is only used up when the user is actively practising and no period access is active. |
+| Property   | Type                                | Description                                                                                                                                                                                       |
+|------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `period`   | [`duration`](../readme.md#duration) | (optional if `duration` is provided) A period is a stretch of time the user can freely access the platform starting when it uses the code for the first time.                                     |
+| `duration` | [`duration`](../readme.md#duration) | (optional if `period` is provided) Duration is used to give the user an X amount of "seconds" of access, and is only used up when the user is actively practising and no period access is active. |
 
 ##### Example
 Adds an extra 31 days of free access to the user.
@@ -30,7 +30,8 @@ Content-Type: application/json
 ```
 
 #### Response
-Returns generic access code result. Access code duration and period contain the total sum of time granted. Subscription timeLeft (duration in seconds) and accessEndsAt (period end as datetime) contain the current (after top-up) time left WHEN ACTIVATED.
+Returns generic access code result. Root access code object `duration` and `period` contain the total sum of time granted. Subscription `timeLeft` (duration in seconds) and `accessEndsAt` (period end as datetime) contain the current (after top-up) time left WHEN ACTIVATED.
+**Note;** login path can vary depending on the course selected/ country selected and between environments.
 ```json
 {
     "id": "01K222AK7830YFD599GQXJM0VV",
@@ -51,11 +52,10 @@ Returns generic access code result. Access code duration and period contain the 
             "country": "BE",
             "locale": "nl_BE"
         },
-        "createdAt": "2025-08-07T12:48:14+02:00"
+        "createdAt": "2025-08-07T12:48:14+02:00",
+        "activatedAt": "2025-12-07T20:31:12+02:00"
     },
     "login": "https://test.oefendetheorie.nl/be/inloggen?code=43f86f76f9162065",
     "loginPage": "https://test.oefendetheorie.nl/be/inloggen"
 }
 ```
-
-**Note;** login path can vary depending on the course selected/ country selected and between environments.

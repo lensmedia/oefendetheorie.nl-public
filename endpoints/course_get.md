@@ -10,6 +10,8 @@ Authorization: Basic F00B4R=
 ```
 
 #### Response
+* **Note;** this is a simplified example, the actual response will contain more courses/items.
+* **Note;** using the course href and optionally the slug for category and an optionally item you can construct a URL to the specific course/category/item as entry point for the end-user. These should remain quite stable as they are also used in print.
 ```
 [
     ...,
