@@ -20,8 +20,6 @@ Test credentials are provided by us, these can not be changed as they are reset 
 - Netherlands: http://oefendetheorie.nl/api or
 - Belgium: http://oefendetheorie.be/api (you may choose one of them, does not matter which one for using the API)
 
-_The used domain does not really matter when creating an access code with a preselected course (usually the case). Otherwise the domain decides the domain and accept-language header the preferred locale for the login routes (there is an example in the new access code endpoint response)._
-
 ### Data types
 #### String
 If you don't know, you should find someone that does before we continue.
