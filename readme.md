@@ -53,3 +53,8 @@ Parsing the string representation in php can be simplified using https://www.php
 - [GET /course](endpoints/course_get.md) - Get all courses
 - [POST /access_code](endpoints/access_code_post.md) - Create an access code
 - [POST /access_code/{accessCode}/top-up](endpoints/access_code_top_up_post.md) - Top up an access code
+
+## Postman examples
+We have created examples in Postman. Please be aware that you do need an account (username/password) to use the examples and that you do need to change the authorisation in the Postman examples to use them properly.
+
+[Postman examples](https://www.postman.com/material-operator-28723596/workspace/test-oefendetheorie-nl)
