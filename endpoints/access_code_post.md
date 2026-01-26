@@ -9,6 +9,7 @@ Used to purchase an access code.
 | `period`   | [`duration`](../readme.md#duration) | (optional if duration is provided) A period is a stretch of time the user can freely access the platform starting when it uses the code for the first time.                                     |
 | `duration` | [`duration`](../readme.md#duration) | (optional if period is provided) Duration is used to give the user an X amount of "seconds" of access, and is only used up when the user is actively practising and no period access is active. |
 | `email`    | [`string`](../readme.md#string)     | Email address of the user receiving the access code, the user can use this to recover their access code. We do not use this for anything else.                                                  |
+| `activate` | [`boolean`]()                       | Boolean for if the accessCode needs to be activated immediately, when true and period is set that means hour registration starts right away.                                                    |
 
 ##### Example
 Create an access code with 31 days of free access when the users logs-in for the first time.
@@ -22,7 +23,24 @@ Content-Type: application/json
 {
   "course": "01K21T0WEWA1X4K3CMXW5ZQABN",
   "period": "P1M",
-  "email": "some-user@domain.com"
+  "email": "some-user@domain.com" 
+}
+```
+
+##### Example
+Create an access code with 31 days of free access which starts right away.
+```
+POST /api/access-code HTTP/1.1
+Host: https://test.oefendetheorie.nl
+Authorization: Basic F00B4R=
+Content-Type: application/json
+```
+```json
+{
+  "course": "01K21T0WEWA1X4K3CMXW5ZQABN",
+  "period": "P1M",
+  "email": "some-user@domain.com", 
+  "activate": true
 }
 ```
 
@@ -66,7 +84,7 @@ Returns generic access code result. Root access code object `duration` and `peri
             "locale": "nl_BE"
         },
         "createdAt": "2025-08-07T12:48:14+02:00",
-        "activatedAt": null
+        "activatedAt": "2025-08-07T12:48:14+02:00"
     },
     "login": "https://test.oefendetheorie.nl/be/inloggen?code=43f86f76f9162065",
     "loginPage": "https://test.oefendetheorie.nl/be/inloggen"
