@@ -9,7 +9,7 @@ Used to purchase an access code.
 | `period`   | [`duration`](../readme.md#duration) | (optional if duration is provided) A period is a stretch of time the user can freely access the platform starting when it uses the code for the first time.                                     |
 | `duration` | [`duration`](../readme.md#duration) | (optional if period is provided) Duration is used to give the user an X amount of "seconds" of access, and is only used up when the user is actively practising and no period access is active. |
 | `email`    | [`string`](../readme.md#string)     | Email address of the user receiving the access code, the user can use this to recover their access code. We do not use this for anything else.                                                  |
-| `activate` | [`boolean`]()                       | Boolean for if the accessCode needs to be activated immediately, when true and period is set that means hour registration starts right away.                                                    |
+| `activate` | [`boolean`]()                       | Boolean for if the accessCode needs to be activated immediately, when true and period is set that means hour registration starts right away (default=false).                                                    |
 
 ##### Example
 Create an access code with 31 days of free access when the users logs-in for the first time.
@@ -90,3 +90,4 @@ Returns generic access code result. Root access code object `duration` and `peri
     "loginPage": "https://test.oefendetheorie.nl/be/inloggen"
 }
 ```
+
