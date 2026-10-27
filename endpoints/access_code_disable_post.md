@@ -53,6 +53,7 @@ Returns generic access code result. Root object `subscription` has a key `disabl
         "createdAt": "2025-10-24T10:43:21+02:00",
         "activatedAt": "2025-10-24T10:44:39+02:00",
         "disabledAt": "2025-12-03T10:10:59+01:00",
+        "timeTotal": 36000,
         "timeLeft": 35985,
         "accessEndsAt": null
     },

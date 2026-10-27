@@ -49,8 +49,11 @@ Parsing the string representation in php can be simplified using https://www.php
 
 ## Endpoints
 - [GET /course](endpoints/course_get.md) - Get all courses
+- [GET /access_code/{accessCode}](endpoints/access_code_get.md) - Get access code information
 - [POST /access_code](endpoints/access_code_post.md) - Create an access code
 - [POST /access_code/{accessCode}/top-up](endpoints/access_code_top_up_post.md) - Top up an access code
+- [POST /access_code/{accessCode}/enable](endpoints/access_code_enable_post.md) - Enable an access code
+- [POST /access_code/{accessCode}/disable](endpoints/access_code_disable_post.md) - Disable an access code
 
 ## Postman examples
 We have created examples in Postman. Please be aware that you do need an account (username/password) to use the examples and that you do need to change the authorisation in the Postman examples to use them properly.

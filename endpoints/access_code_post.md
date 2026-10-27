@@ -74,6 +74,7 @@ Returns generic access code result. Root access code object `duration` and `peri
     "subscription": {
         "id": "01K222AKR45D1YFV5WGWJS40CK",
         "email": "some-user@domain.com",
+        "timeTotal": 0,
         "timeLeft": 0,
         "accessEndsAt": null,
         "course": {
