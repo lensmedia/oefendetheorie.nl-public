@@ -85,6 +85,47 @@ Returns an array with all results from access code.
                 "BE1": 8
             }
         }
+    },
+    {
+        "createdAt": "2024-03-12T19:41:07+01:00",
+        "context": {
+            "exam": 3,
+            "passed": false,
+            "mapped_score": 65,
+            "achieved_score": 51,
+            "subject_errors": {
+                "2": 5,
+                "4": 3,
+                "7": 6
+            }
+        }
     }
 ]
 ```
+
+#### Results
+There are two kinds of results, told apart by their `context`.
+
+##### Item results
+Results of items completed on oefendetheorie.nl have a `category_item`.
+
+| Name             | Type    | Description                                                         |
+|------------------|---------|---------------------------------------------------------------------|
+| `passed`         | boolean | Whether the item was passed.                                        |
+| `session`        | Ulid    | The session the item was completed in.                              |
+| `category_item`  | object  | The item that was completed.                                        |
+| `mapped_score`   | integer | The number of questions.                                            |
+| `achieved_score` | integer | The number of correct answers.                                      |
+| `subject_count`  | object  | The number of questions per subject.                                |
+| `subject_errors` | object  | The number of mistakes per subject, only subjects with mistakes.    |
+
+##### Theorieboek.nl exam results
+Exam results from theorieboek.nl have an `exam` instead of a `category_item`.
+
+| Name             | Type    | Description                                                                                                          |
+|------------------|---------|----------------------------------------------------------------------------------------------------------------------|
+| `exam`           | integer | The number of the exam.                                                                                              |
+| `passed`         | boolean | Whether the exam was passed.                                                                                         |
+| `mapped_score`   | integer | The number of questions.                                                                                             |
+| `achieved_score` | integer | The number of correct answers.                                                                                       |
+| `subject_errors` | object  | The number of mistakes, keyed by subject letter (`{"A": 2}`) or chapter number (`{"1": 2}`). Only those with mistakes. |
