@@ -27,7 +27,7 @@ if (!hash_equals($expected, $_SERVER['HTTP_WEBHOOK_SIGNATURE'] ?? '')) {
 }
 ```
 
-In Symfony, `Symfony\Component\Webhook\Client\RequestParser` does the same: `(new RequestParser())->parse($request, $secret)`.
+Webhooks are sent with the [Symfony Webhook component](https://symfony.com/doc/current/webhook.html), using its default headers and signature. In Symfony, its `Symfony\Component\Webhook\Client\RequestParser` verifies them for you: `(new RequestParser())->parse($request, $secret)` checks the signature and returns the event, or throws a `RejectWebhookException`.
 
 ### Item completed
 Sent each time a user completes an item (exercise or exam) with an access code created by you.
