@@ -57,7 +57,6 @@ Parsing the string representation in php can be simplified using https://www.php
 - [POST /access_code/{accessCode}/disable](endpoints/access_code_disable_post.md) - Disable an access code
 
 The `{accessCode}` endpoints only accept access codes created by you, through the API or by us on your behalf. Any other access code returns [404 Not Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404).
-
 ## Webhooks
 - [Item completed](webhooks.md#item-completed) - A user completed an item
 

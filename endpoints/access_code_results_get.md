@@ -89,14 +89,32 @@ Returns an array with all results from access code.
     {
         "createdAt": "2024-03-12T19:41:07+01:00",
         "context": {
-            "exam": 3,
             "passed": false,
             "mapped_score": 65,
+            "category_item": {
+                "id": "01K94XJM5HSMQDK2Q1FFS5TPQR",
+                "url": "https://oefendetheorie.nl/auto/examens/3",
+                "item": {
+                    "id": "e17e108c-74d9-4f88-8368-92d49778caac",
+                    "type": "exam",
+                    "title": "Examen 3",
+                    "modifiedAt": "2026-10-29T04:01:31+01:00",
+                    "originalId": 129
+                },
+                "slug": "3",
+                "title": "Examen 3",
+                "category": {
+                    "id": "01K94X44DAPTFTXMN2D7VHRBJW",
+                    "slug": "examens",
+                    "title": "Examens",
+                    "description": null
+                }
+            },
             "achieved_score": 51,
             "subject_errors": {
-                "2": 5,
-                "4": 3,
-                "7": 6
+                "B2": 5,
+                "B4": 3,
+                "B7": 6
             }
         }
     }
@@ -104,28 +122,14 @@ Returns an array with all results from access code.
 ```
 
 #### Results
-There are two kinds of results, told apart by their `context`.
+| Name             | Type    | Description                                                      |
+|------------------|---------|------------------------------------------------------------------|
+| `passed`         | boolean | Whether the item was passed.                                     |
+| `session`        | Ulid    | The session the item was completed in.                           |
+| `category_item`  | object  | The item that was completed.                                     |
+| `mapped_score`   | integer | The number of questions.                                         |
+| `achieved_score` | integer | The number of correct answers.                                   |
+| `subject_count`  | object  | The number of questions per subject.                             |
+| `subject_errors` | object  | The number of mistakes per subject, only subjects with mistakes. |
 
-##### Item results
-Results of items completed on oefendetheorie.nl have a `category_item`.
-
-| Name             | Type    | Description                                                         |
-|------------------|---------|---------------------------------------------------------------------|
-| `passed`         | boolean | Whether the item was passed.                                        |
-| `session`        | Ulid    | The session the item was completed in.                              |
-| `category_item`  | object  | The item that was completed.                                        |
-| `mapped_score`   | integer | The number of questions.                                            |
-| `achieved_score` | integer | The number of correct answers.                                      |
-| `subject_count`  | object  | The number of questions per subject.                                |
-| `subject_errors` | object  | The number of mistakes per subject, only subjects with mistakes.    |
-
-##### Theorieboek.nl exam results
-Exam results from theorieboek.nl have an `exam` instead of a `category_item`.
-
-| Name             | Type    | Description                                                                                                          |
-|------------------|---------|----------------------------------------------------------------------------------------------------------------------|
-| `exam`           | integer | The number of the exam.                                                                                              |
-| `passed`         | boolean | Whether the exam was passed.                                                                                         |
-| `mapped_score`   | integer | The number of questions.                                                                                             |
-| `achieved_score` | integer | The number of correct answers.                                                                                       |
-| `subject_errors` | object  | The number of mistakes, keyed by subject letter (`{"A": 2}`) or chapter number (`{"1": 2}`). Only those with mistakes. |
+Exam results from theorieboek.nl have no `session` and no `subject_count`. Older ones key `subject_errors` by a subject letter (`{"C": 2}`) instead of a subject.
