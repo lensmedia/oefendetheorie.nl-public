@@ -50,7 +50,7 @@ Returns an array with all results from access code.
                 "BE2": 8
             },
             "achieved_score": 8,
-            "subject_errors": []
+            "subject_errors": {}
         }
     },
     {
@@ -130,6 +130,6 @@ Returns an array with all results from access code.
 | `mapped_score`   | integer | The number of questions.                                         |
 | `achieved_score` | integer | The number of correct answers.                                   |
 | `subject_count`  | object  | The number of questions per subject.                             |
-| `subject_errors` | object  | The number of mistakes per subject, only subjects with mistakes. |
+| `subject_errors` | object  | The number of mistakes per subject, only subjects with mistakes. `{}` without mistakes. |
 
 Exam results from theorieboek.nl have no `session` and no `subject_count`. Older ones key `subject_errors` by a subject letter (`{"C": 2}`) instead of a subject.
